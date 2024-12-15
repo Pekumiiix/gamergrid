@@ -1,0 +1,397 @@
+{
+	"compiler": {
+		"version": "0.8.28+commit.7893614a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "userAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "lvPoints",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "ggPoints",
+						"type": "uint256"
+					}
+				],
+				"name": "PointsAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "userAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "lvPoints",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "ggPoints",
+						"type": "uint256"
+					}
+				],
+				"name": "PointsRemoved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "userAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "userId",
+						"type": "string"
+					}
+				],
+				"name": "UserProfileCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "userAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "userId",
+						"type": "string"
+					}
+				],
+				"name": "UserProfileUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_lvPoints",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_ggPoints",
+						"type": "uint256"
+					}
+				],
+				"name": "addPoints",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_username",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_email",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_class",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_race",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_gender",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_background",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_nftImage",
+						"type": "string"
+					}
+				],
+				"name": "createUserProfile",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getUserProfile",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "userId",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "username",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "email",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "lastLoggedIn",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "joinedDate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "lvPoints",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "ggPoints",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "class",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "race",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "gender",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "background",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "nftImage",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "walletAddress",
+								"type": "address"
+							}
+						],
+						"internalType": "struct GameGrid.UserProfile",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getUserWalletAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_lvPoints",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_ggPoints",
+						"type": "uint256"
+					}
+				],
+				"name": "removePoints",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_background",
+						"type": "string"
+					}
+				],
+				"name": "updateBackground",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_class",
+						"type": "string"
+					}
+				],
+				"name": "updateClass",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_email",
+						"type": "string"
+					}
+				],
+				"name": "updateEmail",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_gender",
+						"type": "string"
+					}
+				],
+				"name": "updateGender",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_nftImage",
+						"type": "string"
+					}
+				],
+				"name": "updateNftImage",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_race",
+						"type": "string"
+					}
+				],
+				"name": "updateRace",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_username",
+						"type": "string"
+					}
+				],
+				"name": "updateUsername",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Gamegrid.sol": "GameGrid"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Gamegrid.sol": {
+			"keccak256": "0x64ba6757c98ea9dc71b1f59c53cec25ae31ba276ac47b0156273f35a367d6161",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a7e1ed2fce51c8c3523dfdf10b36d0ff6358f41360519575df514ae55b041598",
+				"dweb:/ipfs/QmU8aZygcHynPZaTMFkJuDkZoGbyWfRey3YoLtdMRgUYgp"
+			]
+		}
+	},
+	"version": 1
+}

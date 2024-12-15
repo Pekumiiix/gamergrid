@@ -8,7 +8,7 @@ export default function FooterSection() {
       <div className="container px-5 flex flex-col gap-10 md:gap-0 md:flex-row items-start justify-between pt-10 md:pt-40 pb-10">
         <div className="flex items-center gap-3">
           <Image src={`/logo.webp`} alt="Logo" width={50} height={50} />
-          <p className="text-orange-600 text-3xl font-semibold">GAMEGRID</p>
+          <p className="text-orange-600 text-3xl font-semibold">GAMERGRID</p>
         </div>
 
         <div className="flex flex-col md:flex-row gap-10 md:gap-40">

@@ -24,6 +24,7 @@ import {
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Link from "next/link";
 import { useToast } from "@/hooks/use-toast";
+import { createUserProfile } from "@/lib/contract";
 
 const formSchema = z.object({
   username: z.string().min(3, {
@@ -57,11 +58,34 @@ export default function CreateProfileSection() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    toast({ description: "Profile has been created successfully!" });
-    console.log(values);
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const tx = await createUserProfile(
+        values.username,
+        values.email,
+        values.class,
+        values.race,
+        values.gender
+      );
+
+      toast({
+        description:
+          "Profile created successfully! Transaction Hash: " + tx.hash,
+      });
+      form.reset();
+    } catch (error: any) {
+      toast({
+        description: "Failed to create profile: " + error.message,
+        variant: "destructive",
+      });
+    }
   }
+
+  // function onSubmit(values: z.infer<typeof formSchema>) {
+  //   toast({ description: "Profile has been created successfully!" });
+  //   console.log(values);
+  //   form.reset();
+  // }
 
   return (
     <section

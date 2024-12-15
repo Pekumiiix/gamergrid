@@ -24,6 +24,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Link from "next/link";
 import { useToast } from "@/hooks/use-toast";
 import { createUserProfile } from "@/lib/contract";
+import { useEffect } from "react";
 
 const formSchema = z.object({
   username: z.string().min(3, {
@@ -57,6 +58,7 @@ export default function CreateProfileSection() {
     },
   });
 
+  // Define onSubmit outside of useEffect
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       const tx = await createUserProfile(
@@ -73,7 +75,6 @@ export default function CreateProfileSection() {
       });
       form.reset();
     } catch (err: unknown) {
-      // Change 'error: error' to 'err: unknown'
       if (err instanceof Error) {
         toast({
           description: "Failed to create profile: " + err.message,
@@ -88,11 +89,18 @@ export default function CreateProfileSection() {
     }
   }
 
-  // function onSubmit(values: z.infer<typeof formSchema>) {
-  //   toast({ description: "Profile has been created successfully!" });
-  //   console.log(values);
-  //   form.reset();
-  // }
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      console.log("CreateProfileSection mounted");
+      // Perform any actions that require window here if needed
+    }
+
+    return () => {
+      if (typeof window !== "undefined") {
+        console.log("CreateProfileSection unmounted");
+      }
+    };
+  }, []);
 
   return (
     <section

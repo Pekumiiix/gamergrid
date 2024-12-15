@@ -1,4 +1,3 @@
-import Image from "next/image";
 import HeroSection from "./section/hero";
 import CreateProfileSection from "./section/create-profile";
 

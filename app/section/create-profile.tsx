@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -73,11 +72,19 @@ export default function CreateProfileSection() {
           "Profile created successfully! Transaction Hash: " + tx.hash,
       });
       form.reset();
-    } catch (error: any) {
-      toast({
-        description: "Failed to create profile: " + error.message,
-        variant: "destructive",
-      });
+    } catch (err: unknown) {
+      // Change 'error: error' to 'err: unknown'
+      if (err instanceof Error) {
+        toast({
+          description: "Failed to create profile: " + err.message,
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          description: "An unexpected error occurred.",
+          variant: "destructive",
+        });
+      }
     }
   }
 

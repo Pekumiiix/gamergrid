@@ -121,6 +121,9 @@ export default function CreateProfileSection() {
           onSubmit={form.handleSubmit(onSubmit)}
           className="w-full md:w-[75%] lg:w-[50%] space-y-8"
         >
+          <p className="w-fit text-xs text-red-900 px-1.5 py-1 rounded-md bg-orange-500">
+            * This works on a PC only.
+          </p>
           <FormField
             control={form.control}
             name="username"
@@ -261,8 +264,6 @@ export default function CreateProfileSection() {
           >
             Submit
           </Button>
-
-          <p className="text-xs text-red-900">* This works on a PC only.</p>
 
           <div className="flex items-center gap-2">
             <p className="text-orange-200 text-sm">Already have a profile?</p>

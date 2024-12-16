@@ -1,6 +1,4 @@
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Header() {
   return (
@@ -18,13 +16,6 @@ export default function Header() {
             GAMERGRID
           </p>
         </div>
-
-        <Button
-          asChild
-          className="text-white font-semibold text-sm md:text-xl bg-orange-700 md:h-11 px-5"
-        >
-          <Link href={`#create`}>Create Profile</Link>
-        </Button>
       </nav>
     </header>
   );

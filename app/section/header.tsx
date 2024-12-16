@@ -13,7 +13,7 @@ export default function Header() {
             className="w-7 h-7 md:w-[50px] md:h-[50px]"
           />
           <p className="text-orange-600 text-xl md:text-3xl font-semibold">
-            GAMERGRID
+            GAMEGRID
           </p>
         </div>
       </nav>

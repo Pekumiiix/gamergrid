@@ -262,6 +262,8 @@ export default function CreateProfileSection() {
             Submit
           </Button>
 
+          <p className="text-xs text-red-900">* This works on a PC only.</p>
+
           <div className="flex items-center gap-2">
             <p className="text-orange-200 text-sm">Already have a profile?</p>
             <Button
